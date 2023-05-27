@@ -1,0 +1,81 @@
+<div>
+  {{#with program}}
+    <main>
+      <dev><h1>Екскурсійна програма</h1></dev>
+      {{#with excursion}}
+        <section>
+          <dev><h2>Екскурсія {{name}}</h2></dev>
+          <p>Місце проведення:
+            {{location.city}},
+            {{location.country}}</p>
+          <p>Дата проведення {{date}} </p>
+        </section>
+        <hr />
+        {{#each program}}
+          <hr />
+          <section>
+            <dev><h3>Тема екскурсії: {{name}}</h3></dev>
+            <p>Напрямок: {{type}}</p>
+            <p>Тривалість: {{duration}} години</p>
+            {{#with details}}
+              <dev>Місце проведення:
+                {{museum.name}}
+                {{venue.name}}</dev>
+              {{#with museum.location}}
+                <p>За адресою:
+                  {{address}},
+                  {{city}},
+                  {{country}}</p>
+              {{/with}}
+              {{#with venue.location}}
+                <p>За адресою:
+                  {{address}},
+                  {{city}},
+                  {{country}}</p>
+              {{/with}}
+          </section>
+          <section>
+          <ul>
+            {{#each museum.exhibits}}
+              <li><h3>Експонат</h3></li>
+              <div><h4>{{name}}</h4></div>
+              <div>{{#if artist}}
+                  <p>Художник: {{artist}}</p>
+                {{else}}
+                  <p>Художник невідомий</p>
+                {{/if}}
+              </div>
+              <p>Опис: {{description}}</p>
+              <div>
+                {{#if audio_guide}}
+                  <p>Є аудіогід</p>
+                {{else}}
+                  <p>Аудіогід відсутній</p>
+                {{/if}}
+              </div>
+            {{/each}}
+          </ul>
+          </section>                        
+          <section>
+          <ul>
+            {{#each performers}}
+              <li><h3>Виконавець</h3></li>
+              <div><h4> {{name}}</h4></div>
+              <p>Стиль: {{type}}</p>
+            {{/each}}
+            </section>              
+          <section>
+          <h5>Гід</h5>
+          {{#with guide}}
+            <p>Ім'я: {{name}}</p>
+            <p>Мова: {{language}}</p>
+            <p>Рейтинг: {{rating}}</p>
+          {{/with}}
+          </section>
+        {{/with}}
+      </section>
+        {{/each}}
+      {{/with}}
+    </main>
+  {{/with}}
+</div>
