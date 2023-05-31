@@ -1,0 +1,44 @@
+<dev>
+  <main>
+    {{> headings_h1 data="ПРОДАМ"}}
+    <section>
+      <p>{{> card title='Автомобиль' make=make model=model year=year color=color image="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/2022_Toyota_Camry_Hybrid_XLE_in_Midnight_Black_Metallic%2C_Front_Right%2C_12-25-2021.jpg/1200px-2022_Toyota_Camry_Hybrid_XLE_in_Midnight_Black_Metallic%2C_Front_Right%2C_12-25-2021.jpg"}}</p>
+    </section>
+    <section>
+        <h2>{{> pill data="Оберіть комплектацію"}}</h2>
+        <section>
+        {{#with features.interior}}
+                <h3>{{> backgr data="Сидіння"}}</h3>
+                <ul>
+                {{#with seats}}
+                    <li>Матеріал: {{material}}</li>
+                    <li>Колір: {{color}}</li>
+                    <li>Підігрів: {{> checkbox availability=heated}}</li>
+                    <li>Вентиляція: {{> checkbox availability=ventilated}}</li>
+                {{/with}}
+                </ul>
+        </section>
+        <br>
+        <section>
+            <h3>{{> backgr data="Передня панель"}}</h3>
+            <ul>
+            {{#with dashboard}}
+                <li>Матеріал: {{material}}</li>
+                <li>Колір: {{color}}</li>
+                <li>Дисплей</li>
+                    <ul>
+                    {{#with display}}
+                        <li>Тип: {{type}}</li>
+                        <li>Розмір: {{size}}</li>
+                        <li>Роздільна здатність: {{resolution}}</li>
+                        <li>Тачскрін: {{> checkbox availability=touchscreen}}</li>
+                    {{/with}}
+                    </ul>
+            </ul>        
+            {{/with}}
+        </section>
+        {{/with}}
+    </section>
+
+  </main>
+</dev>
