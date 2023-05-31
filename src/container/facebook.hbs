@@ -1,0 +1,52 @@
+<div>
+  <main>
+    <div>
+      <h1>{{name}}</h1>
+    </div>
+    <div>
+      {{#each users}}
+        <h2>{{name}}</h2>
+        <p>Стать: {{gender}}</p>
+        <p>Вік: {{age}}</p>
+        <br />
+        <h2>Друзі</h2>
+        {{#each friends}}
+          <p>id: {{id}}</p>
+          <p>Ім'я: {{name}}</p>
+          <p>Стать: {{gender}}</p>
+          <p>Вік: {{age}}</p>
+          <br />
+          <h2>Спільні друзі</h2>
+          {{#each mutual_friends}}
+            <p>id: {{id}}</p>
+            <p>Ім'я: {{name}}</p>
+            <p>Стать: {{gender}}</p>
+            <p>Вік: {{age}}</p>
+            <br />
+            {{#each mutual_friends}}
+              <p>id: {{id}}</p>
+              <p>Ім'я: {{name}}</p>
+              <p>Стать: {{gender}}</p>
+              <p>Вік: {{age}}</p>
+              <br />
+            {{/each}}
+          {{/each}}
+          <h4>Groups:</h4>
+          {{#each groups}}
+            <p>id: {{id}}</p>
+            <p>Назва: {{name}}</p>
+            <p>Опис: {{description}}</p>
+            <b>Участники групи:</b>
+            {{#each members}}
+              <p>id: {{id}}</p>
+              <p>Ім'я: {{name}}</p>
+              <p>Стать: {{gender}}</p>
+              <p>Вік: {{age}}</p>
+              <br />
+            {{/each}}
+          {{/each}}
+        {{/each}}
+      {{/each}}
+    </div>
+  </main>
+</div>
