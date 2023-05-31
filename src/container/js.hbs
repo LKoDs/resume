@@ -1,0 +1,62 @@
+<dev>
+  <main>
+    <section>
+    <dev>{{> badge_h1 data=name big=true}} </dev>
+    <h3>{{> background_light data=description}}</h3>
+      {{#with history}}
+        <h4>{{> backgr_sec data=year}} {{> backgr_sec data=founder}}</h4>
+      {{/with}}
+    </section>
+    <section>
+      {{#each types}}
+        <b>{{> list_group data=this}}</b>      
+      {{/each}}
+    </section>  
+    <br>
+    <section>
+      <table>
+      <tr>  
+      {{#with syntax}}
+      <th>Variables</th>              
+        {{#each variables}}
+       <td>{{this}}</td>
+        {{/each}}
+        </tr>
+        <tr> 
+      <th>Functions</th>              
+        {{#each functions}}
+       <td>{{this}}</td>
+        {{/each}}
+        </tr>
+        <tr>      
+        <th>Conditionals</th>              
+        {{#each conditionals}}
+       <td>{{this}}</td>
+        {{/each}}
+        </tr>
+        <tr>      
+      <th>Loops</th>
+        {{#each loops}}
+       <td>{{this}}</td>
+        {{/each}}
+        </tr>      
+        <tr>      
+      <th>Classes</th>
+        {{#each classes}}
+       <td>{{this}}</td>
+        {{/each}}
+        </tr>     
+      {{/with}}      
+      </table>
+    </section>
+    <br>
+    <section>
+      <dev>{{> badge_h4 data="Features"}}</dev>
+      <ul>
+      {{#each features}}
+      <li>{{this}}</li>
+      {{/each}}
+      </ul>
+    </section>  
+  </main>
+</dev>
