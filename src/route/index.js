@@ -753,7 +753,9 @@ router.get('/facebook', function (req, res) {
       },
     ],
   })
-=======
+})
+
+// ================================================================
 
 // router.get Створює нам один ентпоїнт
 
@@ -840,7 +842,12 @@ router.get('/mac', function (req, res) {
           price: 19.99,
         },
       ],
-=======
+    },
+  })
+})
+
+// ================================================================
+
 router.get('/car', function (req, res) {
   // res.render генерує нам HTML сторінку
 
@@ -935,9 +942,12 @@ router.get('/car', function (req, res) {
         premium_paint: 595,
       },
       total: 28990,
-
     },
-=======
+  })
+})
+
+// ================================================================
+
 router.get('/js', function (req, res) {
   // res.render генерує нам HTML сторінку
 
@@ -1014,7 +1024,7 @@ router.get('/js', function (req, res) {
         type: 'blog',
       },
     ],
- })
+  })
 
   //                  ↑↑ сюди вводимо JSON дані
 })
