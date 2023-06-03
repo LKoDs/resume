@@ -47,38 +47,66 @@
         </div>
       {{/with}}  
     <div>
+      <p></p>
+      <br>
+      <br>
 
       
       {{#with goodsBlock}}     
         
-          
-        {{#each tabs}}
-          
-          <div class="col-12">   
+          <div class="row">
+          <div class="col-12">
           <div class="nav nav-tabs">
-          <div class='nav-item'>
-            {{#if isActive}}          
-              <a class="nav-item nav-link active">{{text}}</a>
-            {{/if}}
-          </div>
-          <div class='nav-item'>
-            {{#if isDisabled}}
-            {{else}}
-              {{#if isActive}}          
-                <a class="nav-item nav-link active">{{text}}</a>
+        {{#with tabs}}      
+        
+        {{#if [0].isActive}}
+        <div class='nav-item'><a class="nav-item nav-link active text-black">{{[0].text}}</a></div>
+          {{else}}
+            {{#if [0].isDisabled}}
+            <div class='nav-item'><a class="nav-link disabled">{{[0].text}}</a></div>
               {{else}}
-                <a class="nav-item nav-link disabled text-primary">{{text}}</a>
-               {{/if}}
+                <div class='nav-item'><a class="nav-item nav-link">{{[0].text}}</a></div>
             {{/if}}
-          </div>
-          <div class='nav-item'>
-          {{#if isDisabled}}          
-            <a class="nav-link disabled">{{text}}</a>
-          {{/if}}
-          </div>
-          </div>           
-          </div>           
-        {{/each}}
+        {{/if}}
+
+        {{#if [1].isActive}}
+        <div class='nav-item'><a class="nav-item nav-link active text-black">{{[1].text}}</a></div>
+          {{else}}
+            {{#if [1].isDisabled}}
+            <div class='nav-item'><a class="nav-link disabled">{{[1].text}}</a></div>
+              {{else}}
+                <div class='nav-item'><a class="nav-item nav-link">{{[1].text}}</a></div>
+            {{/if}}
+        {{/if}}
+
+        {{#if [2].isActive}}
+        <div class='nav-item'><a class="nav-item nav-link active text-black">{{[2].text}}</a></div>
+          {{else}}
+            {{#if [2].isDisabled}}
+            <div class='nav-item'><a class="nav-link disabled">{{[2].text}}</a></div>
+              {{else}}
+                <div class='nav-item'><a class="nav-item nav-link">{{[2].text}}</a></div>
+            {{/if}}
+        {{/if}}
+
+        {{#if [3].isActive}}
+        <div class='nav-item'><a class="nav-item nav-link active text-black">{{[3].text}}</a></div>
+          {{else}}
+            {{#if [3].isDisabled}}
+            <div class='nav-item'><a class="nav-link disabled">{{[3].text}}</a></div>
+              {{else}}
+                <div class='nav-item'><a class="nav-item nav-link">{{[3].text}}</a></div>
+            {{/if}}
+        {{/if}}       
+        </div>    
+        {{/with}}
+        </div>
+        </div>
+
+        <p></p>
+        <br>
+        <br>
+        <br>
         
     <div class="row g-2">
         {{#each cards}}
