@@ -1,0 +1,214 @@
+<main>
+  
+
+    <div class='card'>
+      <div class='nav nav-tabs'>
+        {{#with navigation}}
+          {{#with links}}
+            <a
+              href={{0.href}}
+              class='nav-link'
+            >{{0.text}}</a>
+            <a
+              href={{1.href}}
+              class='nav-link'
+            >{{1.text}}</a>
+            <a
+              href={{2.href}}
+              class='nav-link disabled'
+            >{{2.text}}</a>
+          {{/with}}
+        {{/with}}
+      </div>
+    </div>
+
+    <div>
+      {{#with newsBlock}}
+        <h1 class='text-center'>{{title}}</h1>
+    </div>  
+
+    <div class="row">              
+        {{#each cards}}
+        <section class="col-3">
+        <div class="card text-bg-secondary">  
+          <div class="card-header">         
+          <span>{{title}}</span>
+          {{#if isTop}}
+          <span class="badge text-bg-danger rounded-pill">Top</span>
+          {{/if}}
+          {{#if isNew}}
+          <span class="badge text-bg-success rounded-pill">New</span>
+          {{/if}}
+          </div>
+          <div class="card-body">{{description}}</div>
+          </div>
+        </section>          
+        {{/each}}
+        </div>
+      {{/with}}  
+    <div>
+      <p></p>
+      <br>
+      <br>
+
+      
+      {{#with goodsBlock}}     
+        
+          <div class="row">
+          <div class="col-12">
+          <div class="nav nav-tabs">
+        {{#with tabs}}      
+        
+        {{#if [0].isActive}}
+        <div class='nav-item'><a class="nav-item nav-link active text-black">{{[0].text}}</a></div>
+          {{else}}
+            {{#if [0].isDisabled}}
+            <div class='nav-item'><a class="nav-link disabled">{{[0].text}}</a></div>
+              {{else}}
+                <div class='nav-item'><a class="nav-item nav-link">{{[0].text}}</a></div>
+            {{/if}}
+        {{/if}}
+
+        {{#if [1].isActive}}
+        <div class='nav-item'><a class="nav-item nav-link active text-black">{{[1].text}}</a></div>
+          {{else}}
+            {{#if [1].isDisabled}}
+            <div class='nav-item'><a class="nav-link disabled">{{[1].text}}</a></div>
+              {{else}}
+                <div class='nav-item'><a class="nav-item nav-link">{{[1].text}}</a></div>
+            {{/if}}
+        {{/if}}
+
+        {{#if [2].isActive}}
+        <div class='nav-item'><a class="nav-item nav-link active text-black">{{[2].text}}</a></div>
+          {{else}}
+            {{#if [2].isDisabled}}
+            <div class='nav-item'><a class="nav-link disabled">{{[2].text}}</a></div>
+              {{else}}
+                <div class='nav-item'><a class="nav-item nav-link">{{[2].text}}</a></div>
+            {{/if}}
+        {{/if}}
+
+        {{#if [3].isActive}}
+        <div class='nav-item'><a class="nav-item nav-link active text-black">{{[3].text}}</a></div>
+          {{else}}
+            {{#if [3].isDisabled}}
+            <div class='nav-item'><a class="nav-link disabled">{{[3].text}}</a></div>
+              {{else}}
+                <div class='nav-item'><a class="nav-item nav-link">{{[3].text}}</a></div>
+            {{/if}}
+        {{/if}}       
+        </div>    
+        {{/with}}
+        </div>
+        </div>
+
+        <p></p>
+        <br>
+        <br>
+        <br>
+        
+    <div class="row g-2">
+        {{#each cards}}
+        <section class="col-4">
+        <div class="card">
+          <img class="card-img-top" src={{image}} />
+          <div class="card-body">         
+          <div class="card-title">{{title}}       
+         {{#if isHot}}
+          <span class="badge text-bg-warning rounded-pill col-3">Hot</span>
+          {{/if}}
+          {{#if isNew}}
+          <span class="badge text-bg-success rounded-pill col-3">Нове</span>
+          {{/if}}
+          </div>
+          <p>{{description}}</p>
+          </div>
+          </div>                    
+        </section>
+        {{/each}}
+      {{/with}}
+    </div>
+    
+
+    
+      {{#with subscribe}}
+      <div class="card text-bg-secondary mb-5">
+        <div class="card-body p-2">
+        <div class="card-title">
+        <h2>{{header}}</h2>
+        </div>
+        <p>{{description}}</p>
+        {{#each buttons}}
+          <div href={{link}} class="btn btn-primary col-3 mb-2">{{text}}</div>
+           <br>
+           {{/each}}           
+      {{/with}}
+      </div>
+    </div>    
+
+    <hr>
+    
+      {{#with service}}
+      <div class="card text-bg-success mt-5 mb-5">
+        <div class="card-body text-center p-1">
+          <div class="card-title">
+        <h2>{{title}}</h2>
+        <p>{{description}}</p>
+        {{#each buttons}}
+          <div href={{link}} class="btn btn-primary">{{text}}</a>
+        {{/each}}
+      {{/with}}
+    </div>
+    </div>
+    </div>
+    </div>
+
+    <hr>
+
+    <div class="row">
+      {{#each footer}}
+      {{#with this}}
+        <div class="nav col-2 pm-1">
+        <table class="col-1">
+          <tbody><tr>
+          <td><a href={{[0].link}} class=" nav-link">{{[0].text}}</a></td></tr>
+          <td><a href={{[1].link}} class=" nav-link">Link</a></td></tr>
+          <td><a href={{[2].link}} class=" nav-link">Link</a></td></tr>
+          <td><a href={{[3].link}} class=" nav-link disabled">{{[0].text}}</a></td></tr>
+           </tbody>
+           </table>
+           </div>
+        {{/with}}
+        {{/each}}
+      </table>
+      </div>
+      </div>
+
+      <hr>
+{{!-- 
+      <div class="row">
+      {{#each footer}}
+      {{#each this}}
+        <div class="nav col-2 pm-1">
+        <table class="col-1">
+        <thead>
+          <tr><th><p clss="text-primary">{{text}}</p></th></tr>
+          </thead>
+          <tbody><tr>
+          <td><a href={{link}} class=" nav-item">Link</a></td></tr>
+           </tbody>
+           </table>
+           </div>
+        {{/each}}
+        {{/each}}
+      </table>
+      </div>
+      </div>
+     --}}
+   
+    
+    
+
+ 
+</main>
