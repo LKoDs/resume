@@ -144,11 +144,23 @@
   <div class='mt-4'>
     <hr />
   </div>
-
-  {{#each footer}}
-    {{#each this}}
-      <div class='btn btn-link' href='link'>{{text}}</div>
-    {{/each}}
-  {{/each}}
+  
+  <div class="row">
+   {{#each footer}}
+      {{#with this}}      
+        <div class="nav col-2 pm-1">
+        <table class="col-1">
+          <tbody><tr>
+            <td><a href={{[0].link}} class=" nav-link">{{[0].text}}</a></td></tr>
+            <td><a href={{[1].link}} class=" nav-link">Link</a></td></tr>
+            <td><a href={{[2].link}} class=" nav-link">Link</a></td></tr>
+            <td><a href={{[3].link}} class=" nav-link disabled">{{[0].text}}</a></td></tr>
+          </tbody>
+        </table>
+        </div>
+      {{/with}}
+      {{/each}}
+      </table>
+  </div>      
 
 </main>
